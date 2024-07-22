@@ -141,7 +141,7 @@ func (s *Store) writeStream(key string, r io.Reader) error {
 	if err != nil {
 		return err
 	}
-
+	// connection keeps waiting as it doesnt know end of file
 	n, err := io.Copy(f, r)
 	if err != nil {
 		return err
